@@ -100,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
   MaterialSearchView searchView;
   @BindView(R.id.city_name_text_view)
   AppCompatTextView cityNameTextView;
+
+  @BindView(R.id.min_temp_text_view)
+  AppCompatTextView minTempTextView;
+  @BindView(R.id.max_temp_text_view)
+  AppCompatTextView maxTempTextView;
+
   @BindView(R.id.wind_text_view)
   TextSwitcher windTextView;
   @BindView(R.id.swipe_container)
@@ -247,6 +253,8 @@ public class MainActivity extends AppCompatActivity {
               CurrentWeather currentWeather = data.get(0);
               if (isLoad) {
                 tempTextView.setText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTemp()));
+                minTempTextView.setText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTempMin()));
+                maxTempTextView.setText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTempMax()));
                 descriptionTextView.setText(AppUtil.getWeatherStatus(currentWeather.getWeatherId(), AppUtil.isRTL(MainActivity.this)));
                 humidityTextView.setText(String.format(Locale.getDefault(), "%d%%", currentWeather.getHumidity()));
                 windTextView.setText(String.format(Locale.getDefault(), getResources().getString(R.string.wind_unit_label), currentWeather.getWindSpeed()));
@@ -255,6 +263,8 @@ public class MainActivity extends AppCompatActivity {
                 descriptionTextView.setCurrentText(AppUtil.getWeatherStatus(currentWeather.getWeatherId(), AppUtil.isRTL(MainActivity.this)));
                 humidityTextView.setCurrentText(String.format(Locale.getDefault(), "%d%%", currentWeather.getHumidity()));
                 windTextView.setCurrentText(String.format(Locale.getDefault(), getResources().getString(R.string.wind_unit_label), currentWeather.getWindSpeed()));
+                minTempTextView.setText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTempMin()));
+                maxTempTextView.setText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTempMax()));
               }
               animationView.setAnimation(AppUtil.getWeatherAnimation(currentWeather.getWeatherId()));
               animationView.playAnimation();
@@ -406,6 +416,8 @@ public class MainActivity extends AppCompatActivity {
   private void storeCurrentWeather(CurrentWeatherResponse response) {
     CurrentWeather currentWeather = new CurrentWeather();
     currentWeather.setTemp(response.getMain().getTemp());
+    currentWeather.setTempMin(response.getMain().getTempMin());
+    currentWeather.setTempMax(response.getMain().getTempMax());
     currentWeather.setHumidity(response.getMain().getHumidity());
     currentWeather.setDescription(response.getWeather().get(0).getDescription());
     currentWeather.setMain(response.getWeather().get(0).getMain());

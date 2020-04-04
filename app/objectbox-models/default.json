@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:380105534448780221",
-      "lastPropertyId": "15:1657444097129252204",
+      "lastPropertyId": "17:8201832276167798712",
       "name": "CurrentWeather",
       "properties": [
         {
@@ -58,6 +58,18 @@
           "id": "15:1657444097129252204",
           "name": "storeTimestamp",
           "type": 6,
+          "flags": 4
+        },
+        {
+          "id": "16:7628078713028827511",
+          "name": "tempMin",
+          "type": 8,
+          "flags": 4
+        },
+        {
+          "id": "17:8201832276167798712",
+          "name": "tempMax",
+          "type": 8,
           "flags": 4
         }
       ],

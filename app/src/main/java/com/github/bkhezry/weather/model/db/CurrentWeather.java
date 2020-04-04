@@ -8,6 +8,8 @@ public class CurrentWeather {
   @Id
   private long id;
   private double temp;
+  private double tempMin;
+  private double tempMax;
   private int humidity;
   private String description;
   private String main;
@@ -86,5 +88,21 @@ public class CurrentWeather {
 
   public void setStoreTimestamp(long storeTimestamp) {
     this.storeTimestamp = storeTimestamp;
+  }
+
+  public double getTempMin() {
+    return tempMin;
+  }
+
+  public void setTempMin(double tempMin) {
+    this.tempMin = tempMin;
+  }
+
+  public double getTempMax() {
+    return tempMax;
+  }
+
+  public void setTempMax(double tempMax) {
+    this.tempMax = tempMax;
   }
 }
