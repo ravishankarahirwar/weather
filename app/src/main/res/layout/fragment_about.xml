@@ -62,6 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacing_middle"
+                    android:visibility="gone"
                     android:gravity="center"
                     android:text="@string/persian_label"
                     android:textAllCaps="false"

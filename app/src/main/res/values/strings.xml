@@ -10,16 +10,16 @@
     <string name="application_info_text">
         <![CDATA[
             <p>
-            <b>Weather application</b>
+            <b>Weather Reporter</b>
             <br/>
             Version: %1$s
             <br/>
-            This application is open source at <br/><a href="https://github.com/bkhezry/weather">https://github.com/bkhezry/weather</a></p>
+            This application is open source at <br/><a href="https://github.com/ravishankarahirwar/weather">https://github.com/ravishankarahirwar/weather</a></p>
         ]]>
     </string>
     <string name="developer_info_text" translatable="false">
         <![CDATA[
-            <p>Behrouz Khezry <a href="https://twitter.com/bkhezry">@bkhezry</a></p>
+            <p>Ravishankar Ahirwar <a href="https://twitter.com/rrss_10051">@rrss_10051</a></p>
         ]]>
     </string>
     <string name="design_api_text" translatable="false">
